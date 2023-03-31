@@ -12,7 +12,7 @@ If you need any features feel free to add them and send pull requests.
 
 ```
 % make
-javac SSLPoke.java
+javac [--add-exports java.base/sun.net.www.protocol.http=ALL-UNNAMED] SSLPoke.java
 ```
 
 ## Usage
