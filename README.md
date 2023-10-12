@@ -11,7 +11,8 @@ If you need any features feel free to add them and send pull requests.
 ## Build
 
 ```
-% make
+make
+// or
 javac [--add-exports java.base/sun.net.www.protocol.http=ALL-UNNAMED] SSLPoke.java
 ```
 
@@ -19,20 +20,20 @@ javac [--add-exports java.base/sun.net.www.protocol.http=ALL-UNNAMED] SSLPoke.ja
 
 Normal usage with successfull response would be:
 ```
-% java SSLPoke google.com 443
+java SSLPoke google.com 443
 Successfully connected
 ```
 
 Usage with connection via http proxy would be (http/1.1 CONNECT is used to tunnel the data):
 ```
-% java -Dhttps.proxyHost=your.proxy.host -Dhttps.proxyPort=8080 SSLPoke google.com 443
+java -Dhttps.proxyHost=your.proxy.host -Dhttps.proxyPort=8080 SSLPoke google.com 443
 Using proxy: your.proxy.host:8080
 Successfully connected
 ```
 
 Usage with special trustStore file set:
 ```
-% java -Djavax.net.ssl.trustStore=your_special_keystore SSLPoke google.com 443
+java -Djavax.net.ssl.trustStore=<keystore-file> SSLPoke google.com 443
 Successfully connected
 ```
 
